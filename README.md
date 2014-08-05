@@ -1,7 +1,7 @@
 node-pwgen
 ==========
 
-Easy-to-remember secure password generator, which generates passwords such as `SUPER.Obedient.FISH856` and `SHY-Gentle-LION827` in the fashion of adjective-adjective-animal0000. Generation can be customized such as adding padding, changing the number of numbers, and declaring a maximum length, in which case you might end up with a password like `-ICY-Hard-CAT58-`
+Easy-to-remember secure password generator, which generates passwords such as `SUPER.Obedient.FISH856` and `SHY-Gentle-LION827` in the fashion of `adjective{separator}adjective{separator}animal{number}`. Generation can be customized such as adding padding, changing the number of numbers, and declaring a maximum length, in which case you might end up with a password like `-ICY-Hard-CAT58-`
 
 Usage:
 ```javascript
