@@ -1,0 +1,22 @@
+{
+  "name": "node-pwgen",
+  "version": "0.0.0",
+  "description": "Password generator",
+  "main": "app.js",
+  "dependencies": {
+    "minimist": "^0.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://www.github.com/vartan/node-pwgen"
+  },
+  "keywords": [
+    "password"
+  ],
+  "author": "Vartan",
+  "license": "ISC"
+}
