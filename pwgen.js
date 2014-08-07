@@ -14,7 +14,7 @@ var _generatePassword = function(options) {
   var separator;
 	var numbers = (options.numbers === 0 ? 0 : options.numbers) || 3
 	var mixCase = options.mixCase || defaultOptions.mixCase || true
-	var padding = (options.padding === true? 1 : options.padding) || 0
+	var padding = (options.padding === true? 1 : options.padding) || (Math.round(Math.random()*4))
 	var maxSize = options.maxSize || false
 	var optionSeparators = options.separators || "-_.";
 	if(separatorsText === "false" || separatorsText === "false") {
@@ -55,7 +55,7 @@ var _generatePassword = function(options) {
 	for(var k=0;k<padding;k++) {
 		password = separator+password+separator
 	}
-	var returning = ((!maxSize || password.length <= maxSize) && (!mixCase || /(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(password))) ? password : _generatePassword({separators:options.separators, numbers:numbers, mixCase:mixCase, padding:padding, maxSize:maxSize, returnCount:options.returnCount});
+	var returning = ((!maxSize || password.length <= maxSize) && (!mixCase || /(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(password))) ? password : _generatePassword({separators:options.separators, numbers:numbers, mixCase:mixCase, padding:(padding?--padding:padding), maxSize:maxSize, returnCount:options.returnCount});
 	if(options.returnCount) {
 		/*
 		
