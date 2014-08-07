@@ -1,23 +1,19 @@
 <html>
 <head>
 <title>test</title>
-<style>
-#passwordPlace {
-	width:70%;
-	height:40%;
-}
-#generatePassword {
-	vertical-align: top;
-		width:25%;
-		height:40%;
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-}
-</style>
 </head>
 <body>
-
-<textarea placeholder="Password will go here" id="passwordPlace"></textarea> <button id="generatePassword">Generate!</button>
-
+<div class="container">
+<h1>Password Generator
+</h1>
+<div class="col-sm-2 text-center">
+<p><button class="btn btn-primary" id="generatePassword">Generate!</button></p>
+</div>
+<div class="col-sm-10 form-group">
+<textarea class="form-control col-md-6" rows="10" placeholder="Password will go here" id="passwordPlace"></textarea> 
+</div>
 <script src="https://raw.githubusercontent.com/vartan/node-pwgen/master/pwgen.js"></script>
 <script>
 document.getElementById("generatePassword").onclick = function(){document.getElementById("passwordPlace").value = generatePassword()+"\n"+document.getElementById("passwordPlace").value}
