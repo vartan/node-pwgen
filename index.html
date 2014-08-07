@@ -5,16 +5,20 @@
 #passwordPlace {
 	width:300px;
 	max-width:100%;
+	height:90%;
+}
+#generatePassword {
+	vertical-align: top;
 }
 </style>
 </head>
 <body>
 
-<input placeholder="Password will go here" id="passwordPlace"/><button id="generatePassword">Generate!</button>
+<textarea placeholder="Password will go here" id="passwordPlace"></textarea> <button id="generatePassword">Generate!</button>
 
 <script src="https://raw.githubusercontent.com/vartan/node-pwgen/master/pwgen.js"></script>
 <script>
-document.getElementById("generatePassword").onclick = function(){document.getElementById("passwordPlace").value = generatePassword()}
+document.getElementById("generatePassword").onclick = function(){document.getElementById("passwordPlace").value = generatePassword()+"\n"+document.getElementById("passwordPlace").value}
 </script>
 </body>
 </html>
