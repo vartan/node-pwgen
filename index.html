@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>test</title>
+<style>
+#passwordPlace {
+	width:300px;
+	max-width:100%;
+}
+</style>
+</head>
+<body>
+
+<input placeholder="Password will go here" id="passwordPlace"/><button id="generatePassword">Generate!</button>
+
+<script src="https://raw.githubusercontent.com/vartan/node-pwgen/master/pwgen.js"></script>
+<script>
+document.getElementById("generatePassword").onclick = function(){document.getElementById("passwordPlace").value = generatePassword()}
+</script>
+</body>
+</html>
