@@ -1,6 +1,6 @@
 "use strict"
 if (typeof module == 'undefined')
-    module = {};
+    var module = {};
 module.exports = function(options2) {
     var defaultOptions = options2 || {}
     defaultOptions.setDefaultOptions = true;
