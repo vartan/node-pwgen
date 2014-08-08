@@ -9,17 +9,27 @@
 </head>
 <body>
 <div class="container">
-<h1>Password Generator</h1>
 
-<div class="col-sm-10 form-group pull-right">
+<h1>Password Generator</h1>
+<div class="col-sm-10 form-group">
 <textarea class="form-control col-md-6" rows="10" placeholder="Password will go here" id="passwordPlace"></textarea> 
 </div>
 
 <div class="col-sm-2 text-center">
 <p><button class="btn btn-primary" id="generatePassword">Generate!</button></p>
-</div>
 
 </div>
+<hr style="clear:both">
+<article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+<a name="user-content-node-pwgen" class="anchor" href="#node-pwgen" aria-hidden="true"><span class="octicon octicon-link"></span></a>node-pwgen</h1>
+
+<p>Easy-to-remember secure password generator, which generates passwords such as <code>SUPER.Obedient.FISH856</code> and <code>..INWARDLY.Sweet.Ostrich595..</code> in the fashion of <code>{padding}{adverb|adjective}{separator}adjective{separator}animal{number}{padding}</code>. Generation can be customized such as adding padding, changing the number of numbers, and declaring a maximum length, in which case you might end up with a password like <code>-ICY-Hard-CAT58-</code></p>
+<hr/>
+<p>
+See source code and more at <a href="http://github.com/vartan/node-pwgen">github.com/vartan/node-pwgen</a>
+</p>
+</article>
+
 <script src="https://raw.githubusercontent.com/vartan/node-pwgen/master/pwgen.js"></script>
 <script>
 document.getElementById("generatePassword").onclick = function(){document.getElementById("passwordPlace").value = generatePassword()+"\n"+document.getElementById("passwordPlace").value}
