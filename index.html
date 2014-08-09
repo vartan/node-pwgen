@@ -38,19 +38,43 @@ See source code and more at <a href="http://github.com/vartan/node-pwgen">github
 <script src="pwgen.js"></script>
 <script>
 var regenerate = function() {
-	document.getElementById("passwordPlace").value = generatePassword()+"\n"+document.getElementById("passwordPlace").value
+	var passwordTextarea = document.getElementById("passwordPlace");
+	var addedPassword=generatePassword();
+	passwordTextarea.value = addedPassword+"\n"+passwordTextarea.value
+	createSelection(passwordTextarea,0,addedPassword.length)
+	
 	var codeBlocks = document.getElementsByTagName("code")
 	for (var i = codeBlocks.length - 1; i >= 0; i--) {
 		var code = codeBlocks[i]
-		if(code.getAttribute("password") == "yes") {
+		var passwordAttr = code.getAttribute("password")
+		if(passwordAttr == "yes") {
 			code.textContent = generatePassword()
-		} else if(code.getAttribute("password") == "2num"){
+		} else if(passwordAttr == "2num"){
 			code.textContent = generatePassword({numbers:2,padding:0,separators:"|"})
 		}
 	}
 }
 document.getElementById("generatePassword").onclick = regenerate;
 regenerate();
+
+
+/** taken from http://stackoverflow.com/questions/646611/programmatically-selecting-partial-text-in-an-input-field*/
+function createSelection(field, start, end) {
+    if( field.createTextRange ) {
+        var selRange = field.createTextRange();
+        selRange.collapse(true);
+        selRange.moveStart('character', start);
+        selRange.moveEnd('character', end-start);
+        selRange.select();
+    } else if( field.setSelectionRange ) {
+        field.setSelectionRange(start, end);
+    } else if( field.selectionStart ) {
+        field.selectionStart = start;
+        field.selectionEnd = end;
+    }
+    field.focus();
+}
+
 
 </script>
 </body>
