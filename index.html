@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Password Generator</title>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<style>
+	textarea, code[password] {
+		letter-spacing:2px;
+	}
+	</style>
 </head>
 <body>
 <div class="container">
@@ -23,26 +28,25 @@
 <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
 <a name="user-content-node-pwgen" class="anchor" href="#node-pwgen" aria-hidden="true"><span class="octicon octicon-link"></span></a>node-pwgen</h1>
 
-<p>Easy-to-remember secure password generator, which generates passwords such as <code password="yes">SUPER.Obedient.FISH856</code> and <code password="yes">..INWARDLY.Sweet.Ostrich595..</code> in the fashion of <code>{adverb|adjective}</code> <code>adjective</code> <code>animal{number}</code>, with special character padding. Generation can be customized such as adding padding, changing the number of numbers, and declaring a maximum length, in which case you might end up with a password like <code password="yes">-ICY-Hard-CAT58-</code></p>
+<p>Easy-to-remember secure password generator, which generates passwords such as <code password="yes">SUPER.Obedient.FISH856</code> and <code password="yes">..INWARDLY.Sweet.Ostrich595..</code> in the fashion of <code>{adverb|adjective}</code> <code>adjective</code> <code>animal{number}</code>, with special character padding. Generation can be customized such as padding length, changing the number of numbers, and declaring a maximum length, in which case you might end up with a password like <code password="2num">-ICY-Hard-CAT58-</code></p>
 <hr/>
 <p>
 See source code and more at <a href="http://github.com/vartan/node-pwgen">github.com/vartan/node-pwgen</a>
 </p>
 </article>
 
-<script src="https://raw.githubusercontent.com/vartan/node-pwgen/master/pwgen.js"></script>
+<script src="pwgen.js"></script>
 <script>
 document.getElementById("generatePassword").onclick = function(){document.getElementById("passwordPlace").value = generatePassword()+"\n"+document.getElementById("passwordPlace").value}
 var codeBlocks = document.getElementsByTagName("code")
 for (var i = codeBlocks.length - 1; i >= 0; i--) {
 	var code = codeBlocks[i]
-	if(code.getAttribute("password")) {
+	if(code.getAttribute("password") == "yes") {
 		code.textContent = generatePassword()
-	} else {
-		console.log(code)
+	} else if(code.getAttribute("password") == "2num"){
+		code.textContent = generatePassword({numbers:2,padding:0,separators:"|"})
 	}
 }
-console.log(codeBlocks)
 </script>
 </body>
 </html>
