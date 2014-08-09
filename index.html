@@ -37,16 +37,20 @@ See source code and more at <a href="http://github.com/vartan/node-pwgen">github
 
 <script src="pwgen.js"></script>
 <script>
-document.getElementById("generatePassword").onclick = function(){document.getElementById("passwordPlace").value = generatePassword()+"\n"+document.getElementById("passwordPlace").value}
-var codeBlocks = document.getElementsByTagName("code")
-for (var i = codeBlocks.length - 1; i >= 0; i--) {
-	var code = codeBlocks[i]
-	if(code.getAttribute("password") == "yes") {
-		code.textContent = generatePassword()
-	} else if(code.getAttribute("password") == "2num"){
-		code.textContent = generatePassword({numbers:2,padding:0,separators:"|"})
+var regenerate = function() {
+	document.getElementById("passwordPlace").value = generatePassword()+"\n"+document.getElementById("passwordPlace").value
+	var codeBlocks = document.getElementsByTagName("code")
+	for (var i = codeBlocks.length - 1; i >= 0; i--) {
+		var code = codeBlocks[i]
+		if(code.getAttribute("password") == "yes") {
+			code.textContent = generatePassword()
+		} else if(code.getAttribute("password") == "2num"){
+			code.textContent = generatePassword({numbers:2,padding:0,separators:"|"})
+		}
 	}
 }
+document.getElementById("generatePassword").onclick = regenerate;
+
 </script>
 </body>
 </html>

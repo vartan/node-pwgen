@@ -35,7 +35,6 @@ var generatePassword = function(options) {
         var numbers = (options.numbers === 0 ? 0 : options.numbers) || 3
         var mixCase = options.mixCase || defaultOptions.mixCase || true
         var padding = (options.padding === true ? 1 : options.padding) || (Math.round(Math.random() * 4))
-        console.log(padding)
         var maxSize = options.maxSize || false
         var optionSeparators = options.separators || "-_.";
         if (separatorsText === "false" || separatorsText === "false") {
